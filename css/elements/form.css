@@ -1,0 +1,41 @@
+.button {
+  cursor: pointer; }
+
+.button, .input, .textarea {
+  display: block;
+  outline: none;
+  border: none;
+  background: #fff;
+  font-family: "Exo 2", sans-serif;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
+
+.input {
+  width: 100%;
+  border: 3px solid #EAEAEA;
+  font-size: 12px;
+  margin-bottom: 20px;
+  padding: 19px 24px; }
+
+.textarea {
+  resize: none; }
+
+::-webkit-input-placeholder {
+  color: #424242;
+  text-transform: uppercase;
+  font-weight: 600; }
+
+::-moz-placeholder {
+  color: #424242;
+  text-transform: uppercase;
+  font-weight: 600; }
+
+:-ms-input-placeholder {
+  color: #424242;
+  text-transform: uppercase;
+  font-weight: 600; }
+
+::placeholder {
+  color: #424242;
+  text-transform: uppercase;
+  font-weight: 600; }

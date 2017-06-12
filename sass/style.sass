@@ -1,0 +1,792 @@
+@import sprite
+@import variables
+*
+	margin: 0
+	padding: 0
+
+body
+	font: $fz $ff
+	color: $c1
+	box-sizing: border-box
+	&.with-content
+		.wrapper
+			// height: 800px
+	&.contacts
+		.wrapper
+			background: url('../img/bg/contacts.jpg') no-repeat center top
+			background-size: cover
+	&.housings
+		.wrapper
+			background: url('../img/bg/housings.jpg') no-repeat center top
+			background-size: cover
+
+@import grid
+@import text
+@import elements/form
+@import elements/popup
+
+// .btn-close
+// 	i
+// 		transition: .3s
+// 	&:hover
+// 		i
+// 			transform: rotate(45deg)
+
+.wrapper
+	position: relative
+	// height: 800px
+	height: 100vh
+	min-height: 568px
+	background: url('../img/bg/main.jpg') no-repeat center top
+	background-size: cover
+
+header
+	padding-top: 30px
+	text-align: center
+
+footer
+	position: absolute
+	bottom: 30px
+	color: $c2
+	width: 100%
+	font-weight: 500
+	a
+		position: relative
+		color: $c2
+		border-bottom: 1px dotted $c2
+		padding-bottom: 2px
+		transition: .3s
+		&:hover
+			color: #F69355
+			border-bottom: 1px dotted #F69355
+	.copy
+		padding-left: 30px
+		line-height: 21px
+	.docs
+		text-align: center
+		box-sizing: border-box
+		transition: .3s
+		position: relative
+		&.open
+			*
+				// transition: .3s
+			.header
+				.btn-close
+					display: block
+			.title
+				a
+					border-bottom: 1px dotted $c1
+				i
+					@include sprite($clip-black)
+			.docs-wrap
+				position: absolute
+				bottom: -20px
+				left: 20px
+				width: 370px
+				margin-left: auto
+				margin-right: auto
+				color: $c1
+				background-color: #FFF
+				&:after
+					position: absolute
+					content: ''
+					display: block
+					width: 100%
+					height: 30px
+					left: 0
+					bottom: -30px
+					background: $c2
+			.box
+				top: 0
+				right: -72px
+				position: absolute
+
+			.title
+				padding: 24px 15px 24px
+				a
+					color: $c1
+			.body
+				display: block
+				a
+					border-bottom: none
+			.row
+				border-top: 2px solid #F2F2F2
+				padding: 15px 16px 13px
+				&:hover
+					.format
+						color: #3892e6
+						&.color-red-hover
+							color: #f00
+					i
+						&.icon-upload_gray
+							@include sprite($upload_green)
+						&.icon-search_gray
+							@include sprite($search_green)
+
+
+			.format
+				width: 40px
+				height: 40px
+				line-height: 40px
+				box-sizing: border-box
+				border: 2px solid #E2E2E2
+				color: #d8d8d8
+				font-weight: 500
+				margin-right: 18px
+
+			.sub-title
+				text-align: left
+				padding-top: 2.5px
+				span
+					opacity: .39
+					display: block
+					margin-top: 1px
+			.anchor
+				float: right
+				padding-top: 3px
+
+		.header
+			.btn-close
+				display: none
+			i
+				margin-right: 2px
+		.body
+			display: none
+	
+	.dev
+		line-height: 21px
+		text-align: right
+		padding-right: 30px
+
+.nav
+	position: relative
+	display: inline-block
+	font-size: 12px
+	text-transform: uppercase
+	text-align: center
+	font-weight: 600
+	top: 6px
+	li
+		display: inline-block
+		margin-left: 11.5px
+		margin-right: 11.5px
+		padding-bottom: 2px
+		transition: .3s
+		border-bottom: 3px solid transparent
+		&:hover, &.select
+			border-bottom: 3px solid #F59355
+.nav-left
+	margin-right: 20px
+.nav-right
+	margin-left: 23px
+	margin-right: 30px
+
+.logo
+	display: inline-block
+	vertical-align: middle
+
+.box
+	position: relative
+	background: $c2
+	width: 70px
+	height: 70px
+	box-sizing: border-box
+	line-height: 70px
+	cursor: pointer
+	text-align: center
+
+.button
+	color: $c2
+	background: #9ECA4E
+	padding: 11.5px 17px
+
+.btn-close
+	&.select
+		.icon
+			transform: rotate(45deg)
+
+.slider
+	margin-top: 60px
+	margin-bottom: 55px
+	img
+		display: block
+		width: 100%
+	.slick-arrow
+		position: absolute
+		z-index: 1000
+		top: auto
+		bottom: -33px
+		background: $c2 !important
+		// padding-right: 15px
+		&:before
+			display: none
+
+	.slick-next
+		right: 2px
+		
+
+	.slick-prev
+		left: auto
+		right: 74px
+
+.fix-btns
+	right: 0
+	top: 40%
+	position: fixed
+	font-weight: 600
+	color: $c2
+	font-size: 12px
+	.item
+		right: -135px
+		z-index: 10
+		position: relative
+		width: 200px
+		height: 70px
+		line-height: 70px
+		margin-bottom: 11px
+		cursor: pointer
+		transition: .3s
+		&.open, &:hover
+			right: 0px
+	.icon-wrap
+		float: left
+		width: 64px
+		text-align: center
+	.text
+		float: left
+		padding-left: 10px
+	.chat
+		background: #F69355
+		.icon-wrap
+			border-right: 1px solid #F6B287
+
+	.phone
+		background: #9EC94E
+		.icon-wrap
+			border-right: 1px solid #BCDA81
+#contacts
+	position: relative
+	width: 470px
+	margin-left: 30px
+	margin-right: auto
+	background: $c2
+	margin-top: -585px
+	box-sizing: border-box
+	// left: -72px
+	padding: 45px 60px
+	box-shadow: 0px 0px 7.92px 0.08px rgba(0, 0, 0, 0.13)
+	box-sizing: border-box
+	h1
+		margin-bottom: 25px
+	.gray-text
+		color: #424242
+		opacity: .43
+		font-weight: 500
+		margin-top: 7px
+	.green-text
+		color: #a2d23a
+		font-weight: 600
+		font-size: 20px
+		margin-top: 7px
+	.line
+		margin-bottom: 45px
+	.time
+		text-transform: uppercase
+		font-weight: 600
+		.col
+			&:nth-of-type(1)
+				width: 75px
+	.btn-close
+		position: absolute
+		top: 0
+		right: -71px
+		box-shadow: 0px 0px 7.92px 0.08px rgba(0, 0, 0, 0.13)
+		&:before
+			content: ''
+			display: block
+			position: absolute
+			top: 0
+			left: -5px
+			width: 5px
+			height: 70px
+			background-color: $c2
+#dinamic
+	position: relative
+	width: 770px
+	margin-left: auto
+	margin-right: auto
+	background: $c2
+	margin-top: -585px
+	box-sizing: border-box
+	// left: -20px
+	.header
+		position: relative
+		padding: 40px 0 0
+		text-align: center
+		&:after
+			display: block
+			position: absolute
+			width: 100%
+			height: 11px
+			bottom: -11px
+			left: 0
+			background: url('../img/shadow-2.jpg')
+		h1
+			margin-bottom: 35px
+			padding-left: 15px
+			padding-right: 15px
+		.links
+			font-weight: 500
+			li
+				width: 16.66666666666667%
+				display: inline-block
+				font-size: 11px
+				box-sizing: border-box
+				border-top: 2px solid #E2E2E2
+				height: 64px
+				line-height: 8px
+				vertical-align: bottom
+				border-right: 2px solid #E2E2E2
+				color: #d5d5d5
+				a
+					display: block
+					color: #d5d5d5
+					padding: 20px 5px
+				span
+					position: relative
+					font-size: 24px
+					top: 7px
+					margin-right: 5px
+				&:nth-of-type(1)
+					span
+						margin-right: 0
+						font-size: 18px
+				&:last-of-type
+					border-right: none
+				&:hover, &.select
+					color: $c2
+					background: #9ECA4E
+					border-top: 2px solid #9ECA4E
+					a
+						color: $c2
+	.body
+		padding-top: 30px
+		padding-bottom: 52px
+		background: #F7F7F7
+		text-align: center
+		text-transform: uppercase
+		font-weight: 500
+		li
+			display: inline-block
+	.btn-close
+		position: absolute
+		top: 0
+		right: -72px
+	.years
+		margin-bottom: 20px
+		font-size: 24px
+		li
+			margin-left: 21px
+			margin-right: 21px
+			border-bottom: 3px solid transparent
+			&:hover, &.select
+				border-bottom: 3px solid #9ECA4E
+	.months
+		color: #bbbbbb
+		font-size: 11px
+		li
+			margin-left: 6.5px
+			margin-right: 6.5px
+			a
+				color: #bbbbbb
+			&:hover, &.select
+				a
+					color: $c1
+	.slider
+		position: relative
+		margin: 40px 0
+		&:before, &:after
+			z-index: 100
+			display: block
+			position: absolute
+			content: ''
+			top: 0px
+			width: 65px
+			height: 89px
+		&:before
+			left: 0
+			background: -moz-linear-gradient(left,  rgba(224,224,224,0.9) 20%, transparent 100%);
+			background: -webkit-linear-gradient(left,  rgba(224,224,224,0.9) 20%,transparent 100%);
+			background: linear-gradient(to right,  rgba(224,224,224,0.9) 20%,transparent 100%);
+		&:after
+			right: 0
+			background: -moz-linear-gradient(left,  transparent 0%, rgba(224,224,224,0.9) 20%);
+			background: -webkit-linear-gradient(left, transparent 0%, rgba(224,224,224,0.9) 20%);
+			background: linear-gradient(to right, transparent 0%, rgba(224,224,224,0.9) 20%);
+		.item
+			height: 89px
+			overflow: hidden
+		img
+			width: 112px
+			margin-left: auto
+			margin-right: auto
+		.slick-arrow
+			top: auto
+			bottom: -25px
+		.slick-prev
+			left: 0
+		.slick-next
+			right: 0
+#content
+	position: relative
+	width: 770px
+	margin-left: auto
+	margin-right: auto
+	background: $c2
+	margin-top: -585px
+	box-sizing: border-box
+	left: -72px
+	.header
+		position: relative
+		padding: 37px 45px 33px
+		// box-shadow: 0px 14px 35px -9px rgba(184,184,184,1)
+		margin-bottom: 32px
+		&:before
+			content: ''
+			position: absolute
+			bottom: -36px
+			left: 0
+			width: 100%
+			height: 36px
+			background: url('../img/shadow.png')
+	h1
+		float: left
+		padding-top: 6px
+	.menu
+		font-weight: 500
+		float: right
+		li
+			display: inline-block
+			margin-right: 1px
+			a
+				display: block
+				padding: 8.5px 9px
+				border: 3px solid transparent
+				transition: .3s
+				&:hover
+					border: 3px solid #9ECA4E
+					color: #9ECA4E
+	.abs-right
+		position: absolute
+		top: 0
+		right: -72px
+		.scroll
+			position: absolute
+			top: 93px
+			right: 24px
+			background: url('../img/scroll.png')
+			width: 20px
+			height: 366px
+
+	.body
+		p
+			line-height: 30px
+			padding: 0 45px
+			letter-spacing: 0.5px
+			margin-bottom: 30px
+		h2
+			padding-left: 45px
+			padding-right: 45px
+			box-sizing: border-box
+			margin-bottom: 40px
+
+	#map
+		position: relative
+		background: url('../img/map.jpg')
+		height: 340px
+		margin-top: 50px
+		.item
+			position: absolute
+			border-radius: 50%
+			text-align: center
+			transition: .3s
+			&:hover
+				z-index: 9
+				.icon-wrap
+					width: 60px
+					height: 60px
+					line-height: 60px
+				.text
+					opacity: 1
+					z-index: 10
+
+				.bg-brown
+					box-shadow: 0px 0px 38px -2px #604D46
+				.bg-blue
+					box-shadow: 0px 0px 38px -2px #168DA1
+				.bg-green
+					box-shadow: 0px 0px 38px -2px #9DCA4E
+				.bg-orange
+					box-shadow: 0px 0px 38px -2px #F59355
+				.bg-yellow
+					box-shadow: 0px 0px 38px -2px #FECA6E
+			&:nth-of-type(1)
+				top: 19px
+				left: 385px
+			&:nth-of-type(2)
+				top: 71px
+				left: 395px
+			&:nth-of-type(3)
+				top: 130px
+				left: 212px
+			&:nth-of-type(4)
+				top: 135px
+				left: 383px
+			&:nth-of-type(5)
+				top: 115px
+				left: 450px
+			&:nth-of-type(6)
+				top: 160px
+				left: 330px
+			&:nth-of-type(7)
+				top: 220px
+				left: 310px
+			&:nth-of-type(8)
+				top: 210px
+				left: 460px
+			&:nth-of-type(9)
+				top: 260px
+				left: 380px
+				.text
+					top: -53px
+					left: 70px
+					&:before
+						left: -19px
+						top: 7px
+						transform: rotate(-90deg)
+		.icon-wrap
+			width: 40px
+			height: 40px
+			border-radius: 50%
+			line-height: 38px
+			transition: .3s
+		.text
+			opacity: 0
+			position: relative
+			color: #61cdf5
+			background: $c2
+			padding: 10px 15px
+			top: 16px
+			left: 11px
+			transition: .3s
+			&:before
+				position: absolute
+				display: block
+				content: ''
+				width: 0
+				height: 0
+				border-style: solid
+				border-width: 0 19px 22px 0px
+				border-color: transparent transparent #ffffff transparent
+				left: 35%
+				top: -22px
+		span
+			border-bottom: 2px dotted #61cdf5
+		.bg-brown
+			background: #604D46
+		.bg-blue
+			background: #168DA1
+		.bg-green
+			background: #9DCA4E
+		.bg-orange
+			background: #F59355
+		.bg-yellow
+			background: #FECA6E
+
+	#offer, #news
+		position: relative
+		.item
+			position: relative
+			border-top: 2px solid #E2E2E2
+			padding: 36px 45px
+			&.open
+				.title
+					img
+						opacity: 1
+						webkit-filter: none
+						-moz-filter: none
+						-ms-filter: none
+						-o-filter: none
+						filter: none
+						filter: none
+					span, .button
+						display: inline-block
+					.caret
+						.icon
+							transform: rotate(180deg)
+		.title
+			position: relative
+			vertical-align: middle
+			img
+				opacity: 0.3
+				vertical-align: middle
+				-webkit-filter: grayscale(100%)
+				-moz-filter: grayscale(100%)
+				-ms-filter: grayscale(100%)
+				-o-filter: grayscale(100%)
+				filter: grayscale(100%)
+				filter: gray
+				transition: .3s
+			span
+				display: none
+				// display: inline-block
+				opacity: .39
+				font-style: italic
+				color: #614d44
+				vertical-align: middle
+				margin-left: 20px
+			// &:before
+			// 	position: absolute
+			// 	content: ''
+			// 	right: 12px
+			// 	top: 17px
+			// 	@include sprite($arrow)
+			// &:after
+			// 	top: 0
+			// 	right: 0
+			// 	position: absolute
+			// 	content: ''
+			// 	width: 40px
+			// 	height: 40px
+			// 	border: 2px solid #E2E2E2
+			// 	box-sizing: border-box
+			.caret
+				position: absolute
+				top: 0
+				right: 0
+				width: 40px
+				height: 40px
+				border: 2px solid #E2E2E2
+				box-sizing: border-box
+				text-align: center
+				line-height: 34px
+				cursor: pointer
+				transition: .3s
+		.button
+			display: none
+			right: 67px
+			top: 0
+			position: absolute
+			// display: inline-block
+			vertical-align: middle
+		.content
+			display: none
+			padding-top: 35px
+			p
+				padding-left: 0
+				padding-right: 0
+				&:last-of-type
+					margin-bottom: 0
+	#news
+		margin-top: -20px
+		.item
+			&:nth-of-type(1)
+				border-top: none
+			&.open
+				.title
+					p
+						color: #2abbf2
+						border-bottom: 1px dotted #2abbf2
+		.title
+			p
+				position: relative
+				top: 9px
+				display: inline-block
+				text-transform: uppercase
+				font-size: 14px
+				font-weight: 500
+				border-bottom: 1px dotted $c1
+				padding: 0 0 3px
+				line-height: normal
+				max-width: 480px
+				cursor: pointer
+				&:hover
+					color: #2abbf2
+					border-bottom: 1px dotted #2abbf2
+
+		.content
+			padding-top: 15px
+			padding-left: 122px
+			p
+				margin-bottom: 5px
+				font-weight: 500
+			.fz22
+				font-size: 22px
+		.date
+			margin-right: 35px
+			span
+				position: relative
+				display: inline-block
+				margin-left: 0
+				font-weight: 600 !important
+				font-style: normal
+				&.day
+					font-size: 31px
+					margin-right: 8px
+				&.month
+					
+					font-size: 18px
+					vertical-align: top
+					top: 1px
+				&.year
+					font-size: 12px
+					transform: rotate(-90deg)
+					left: -8px
+					margin-left: 3px
+
+
+#housings
+	.abs-blocks
+		*
+			position: absolute
+			background-size: 100% !important
+		.house-52
+			background: url('../img/housings/52.png')
+			width: 20%
+			height: 20%
+			top: 20%
+			left: 20%
+		.house-8
+			background: url('../img/housings/8.png')
+		.house-18
+			background: url('../img/housings/18.png')
+		.house-17
+			background: url('../img/housings/17.png')
+		.house-16
+			background: url('../img/housings/16.png')
+	.selection
+		position: absolute
+		bottom: 110px
+
+
+table
+	width: 100%
+	text-align: center
+	border-collapse: collapse
+	border-width: 2px
+	// border-color: #E2E2E2
+	margin: 30px auto
+	thead
+		font-weight: 500
+		text-transform: uppercase
+		th
+			opacity: .45
+			font-size: 11px
+			padding: 20px 10px
+	tbody
+		font-weight: 600
+		td
+			font-size: 16px
+			padding: 20px 10px
+	th, td
+		border: 2px solid #E2E2E2

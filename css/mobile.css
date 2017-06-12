@@ -1,0 +1,33 @@
+#mob-sticks {
+  width: 40px;
+  height: 40px;
+  cursor: pointer; }
+  #mob-sticks span {
+    display: block;
+    position: relative;
+    width: 35px;
+    height: 4px;
+    background: #424242;
+    margin-left: auto;
+    margin-right: auto;
+    -webkit-transition: .5s;
+    transition: .5s; }
+    #mob-sticks span:nth-of-type(2) {
+      margin: 6px auto; }
+  #mob-sticks.close {
+    padding-top: 12px; }
+    #mob-sticks.close span:nth-of-type(1) {
+      -webkit-transform: rotate(135deg);
+          -ms-transform: rotate(135deg);
+              transform: rotate(135deg); }
+    #mob-sticks.close span:nth-of-type(2) {
+      display: none; }
+    #mob-sticks.close span:nth-of-type(3) {
+      margin-top: -4px;
+      -webkit-transform: rotate(-135deg);
+          -ms-transform: rotate(-135deg);
+              transform: rotate(-135deg); }
+
+@media screen and (max-width: 768px) {
+  .w2 .col, .w3 .col, .w4 .col, .w5 .col, .w6 .col {
+    width: 100%; } }
